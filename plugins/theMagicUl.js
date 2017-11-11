@@ -7,7 +7,8 @@
     ];
     var appData = [];
 
-    $.fn.ulPlugin = function (animation) {
+    $.fn.ulPlugin = function (animation, cityArray) {
+        dCitys = cityArray || dCitys;
         function pushData(data) {
             data.list.forEach(function (val) {
                 appData.push({name: val.name, temp: Math.round(val.main.temp)});
@@ -87,4 +88,8 @@
 
 })(jQuery);
 
+var cityArray = [{ name: 'Minsk', id: 625144 }];
+
 $('#12').ulPlugin('up');
+
+//$('#12').ulPlugin('up', cityArray);
