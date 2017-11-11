@@ -42,6 +42,17 @@
         var self;
         self = this;
 
+        this.click((event) => {
+            var tgt = event.target;
+            if(tgt.tagName === 'LI') {
+                if(animation === 'up') {
+                    this[0].prepend(tgt);
+                } else {
+                    this[0].append(tgt);
+                }
+
+            }
+        });
         var search = function () {
             self.children().contents().each(function () {
                 var self2 = this;
